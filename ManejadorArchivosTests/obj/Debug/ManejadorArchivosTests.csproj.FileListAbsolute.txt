@@ -1,0 +1,8 @@
+C:\Users\OECHSLE\Documents\Visual Studio 2015\Projects\práctica\PRACTICA_MANEJOARCHIVOS\ManejadorArchivosTests\obj\Debug\ManejadorArchivosTests.csprojResolveAssemblyReference.cache
+C:\Users\OECHSLE\Documents\Visual Studio 2015\Projects\práctica\PRACTICA_MANEJOARCHIVOS\ManejadorArchivosTests\bin\Debug\ManejadorArchivosTests.dll
+C:\Users\OECHSLE\Documents\Visual Studio 2015\Projects\práctica\PRACTICA_MANEJOARCHIVOS\ManejadorArchivosTests\bin\Debug\ManejadorArchivosTests.pdb
+C:\Users\OECHSLE\Documents\Visual Studio 2015\Projects\práctica\PRACTICA_MANEJOARCHIVOS\ManejadorArchivosTests\bin\Debug\BibliotecaClases.dll
+C:\Users\OECHSLE\Documents\Visual Studio 2015\Projects\práctica\PRACTICA_MANEJOARCHIVOS\ManejadorArchivosTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\OECHSLE\Documents\Visual Studio 2015\Projects\práctica\PRACTICA_MANEJOARCHIVOS\ManejadorArchivosTests\bin\Debug\BibliotecaClases.pdb
+C:\Users\OECHSLE\Documents\Visual Studio 2015\Projects\práctica\PRACTICA_MANEJOARCHIVOS\ManejadorArchivosTests\obj\Debug\ManejadorArchivosTests.dll
+C:\Users\OECHSLE\Documents\Visual Studio 2015\Projects\práctica\PRACTICA_MANEJOARCHIVOS\ManejadorArchivosTests\obj\Debug\ManejadorArchivosTests.pdb

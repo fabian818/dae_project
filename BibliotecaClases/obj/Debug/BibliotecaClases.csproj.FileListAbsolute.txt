@@ -1,0 +1,29 @@
+c:\users\propietario\documents\visual studio 2013\Projects\Practica1\BibliotecaClases\bin\Debug\BibliotecaClases.dll
+c:\users\propietario\documents\visual studio 2013\Projects\Practica1\BibliotecaClases\bin\Debug\BibliotecaClases.pdb
+c:\users\propietario\documents\visual studio 2013\Projects\Practica1\BibliotecaClases\obj\Debug\BibliotecaClases.csprojResolveAssemblyReference.cache
+c:\users\propietario\documents\visual studio 2013\Projects\Practica1\BibliotecaClases\obj\Debug\BibliotecaClases.dll
+c:\users\propietario\documents\visual studio 2013\Projects\Practica1\BibliotecaClases\obj\Debug\BibliotecaClases.pdb
+C:\Users\Usuario\Desktop\Practica1\BibliotecaClases\bin\Debug\BibliotecaClases.dll
+C:\Users\Usuario\Desktop\Practica1\BibliotecaClases\bin\Debug\BibliotecaClases.pdb
+C:\Users\Usuario\Desktop\Practica1\BibliotecaClases\obj\Debug\BibliotecaClases.csprojResolveAssemblyReference.cache
+C:\Users\Usuario\Desktop\Practica1\BibliotecaClases\obj\Debug\BibliotecaClases.dll
+C:\Users\Usuario\Desktop\Practica1\BibliotecaClases\obj\Debug\BibliotecaClases.pdb
+C:\Users\Propietario\Desktop\Practica1\BibliotecaClases\bin\Debug\BibliotecaClases.dll
+C:\Users\Propietario\Desktop\Practica1\BibliotecaClases\bin\Debug\BibliotecaClases.pdb
+C:\Users\Propietario\Desktop\Practica1\BibliotecaClases\obj\Debug\BibliotecaClases.csprojResolveAssemblyReference.cache
+C:\Users\Propietario\Desktop\Practica1\BibliotecaClases\obj\Debug\BibliotecaClases.dll
+C:\Users\Propietario\Desktop\Practica1\BibliotecaClases\obj\Debug\BibliotecaClases.pdb
+C:\Users\Lisbet\Desktop\PRACTICA\Practica1\BibliotecaClases\bin\Debug\BibliotecaClases.dll
+C:\Users\Lisbet\Desktop\PRACTICA\Practica1\BibliotecaClases\bin\Debug\BibliotecaClases.pdb
+C:\Users\Lisbet\Desktop\PRACTICA\Practica1\BibliotecaClases\obj\Debug\BibliotecaClases.csprojResolveAssemblyReference.cache
+C:\Users\Lisbet\Desktop\PRACTICA\Practica1\BibliotecaClases\obj\Debug\BibliotecaClases.dll
+C:\Users\Lisbet\Desktop\PRACTICA\Practica1\BibliotecaClases\obj\Debug\BibliotecaClases.pdb
+C:\Users\user1\Desktop\PRACTICA_MANEJOARCHIVOS\BibliotecaClases\bin\Debug\BibliotecaClases.dll
+C:\Users\user1\Desktop\PRACTICA_MANEJOARCHIVOS\BibliotecaClases\bin\Debug\BibliotecaClases.pdb
+C:\Users\user1\Desktop\PRACTICA_MANEJOARCHIVOS\BibliotecaClases\obj\Debug\BibliotecaClases.csprojResolveAssemblyReference.cache
+C:\Users\user1\Desktop\PRACTICA_MANEJOARCHIVOS\BibliotecaClases\obj\Debug\BibliotecaClases.dll
+C:\Users\user1\Desktop\PRACTICA_MANEJOARCHIVOS\BibliotecaClases\obj\Debug\BibliotecaClases.pdb
+C:\Users\OECHSLE\Documents\Visual Studio 2015\Projects\práctica\PRACTICA_MANEJOARCHIVOS\BibliotecaClases\bin\Debug\BibliotecaClases.dll
+C:\Users\OECHSLE\Documents\Visual Studio 2015\Projects\práctica\PRACTICA_MANEJOARCHIVOS\BibliotecaClases\bin\Debug\BibliotecaClases.pdb
+C:\Users\OECHSLE\Documents\Visual Studio 2015\Projects\práctica\PRACTICA_MANEJOARCHIVOS\BibliotecaClases\obj\Debug\BibliotecaClases.dll
+C:\Users\OECHSLE\Documents\Visual Studio 2015\Projects\práctica\PRACTICA_MANEJOARCHIVOS\BibliotecaClases\obj\Debug\BibliotecaClases.pdb
