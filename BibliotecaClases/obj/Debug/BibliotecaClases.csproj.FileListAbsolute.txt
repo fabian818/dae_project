@@ -27,3 +27,8 @@ C:\Users\OECHSLE\Documents\Visual Studio 2015\Projects\práctica\PRACTICA_MANEJO
 C:\Users\OECHSLE\Documents\Visual Studio 2015\Projects\práctica\PRACTICA_MANEJOARCHIVOS\BibliotecaClases\bin\Debug\BibliotecaClases.pdb
 C:\Users\OECHSLE\Documents\Visual Studio 2015\Projects\práctica\PRACTICA_MANEJOARCHIVOS\BibliotecaClases\obj\Debug\BibliotecaClases.dll
 C:\Users\OECHSLE\Documents\Visual Studio 2015\Projects\práctica\PRACTICA_MANEJOARCHIVOS\BibliotecaClases\obj\Debug\BibliotecaClases.pdb
+C:\Users\gonza\Desktop\dae\BibliotecaClases\bin\Debug\BibliotecaClases.dll
+C:\Users\gonza\Desktop\dae\BibliotecaClases\bin\Debug\BibliotecaClases.pdb
+C:\Users\gonza\Desktop\dae\BibliotecaClases\obj\Debug\BibliotecaClases.csprojResolveAssemblyReference.cache
+C:\Users\gonza\Desktop\dae\BibliotecaClases\obj\Debug\BibliotecaClases.dll
+C:\Users\gonza\Desktop\dae\BibliotecaClases\obj\Debug\BibliotecaClases.pdb

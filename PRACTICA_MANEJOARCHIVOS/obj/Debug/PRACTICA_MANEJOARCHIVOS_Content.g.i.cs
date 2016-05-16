@@ -8,9 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/comprimido.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/encrytado.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/leeryescribir.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/listado.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/binario3.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/json.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/soap2.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/xml2.png")]
 
 
