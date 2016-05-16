@@ -56,3 +56,18 @@ C:\Users\OECHSLE\Documents\Visual Studio 2015\Projects\práctica\PRACTICA_MANEJO
 C:\Users\OECHSLE\Documents\Visual Studio 2015\Projects\práctica\PRACTICA_MANEJOARCHIVOS\PRACTICA_MANEJOARCHIVOS\obj\Debug\PRACTICA_MANEJOARCHIVOS.csprojResolveAssemblyReference.cache
 C:\Users\OECHSLE\Documents\Visual Studio 2015\Projects\práctica\PRACTICA_MANEJOARCHIVOS\PRACTICA_MANEJOARCHIVOS\bin\Debug\BibliotecaClases.dll
 C:\Users\OECHSLE\Documents\Visual Studio 2015\Projects\práctica\PRACTICA_MANEJOARCHIVOS\PRACTICA_MANEJOARCHIVOS\bin\Debug\BibliotecaClases.pdb
+C:\Users\gonza\Desktop\dae\PRACTICA_MANEJOARCHIVOS\bin\Debug\PRACTICA_MANEJOARCHIVOS.exe.config
+C:\Users\gonza\Desktop\dae\PRACTICA_MANEJOARCHIVOS\obj\Debug\PRACTICA_MANEJOARCHIVOS.exe
+C:\Users\gonza\Desktop\dae\PRACTICA_MANEJOARCHIVOS\obj\Debug\PRACTICA_MANEJOARCHIVOS.pdb
+C:\Users\gonza\Desktop\dae\PRACTICA_MANEJOARCHIVOS\bin\Debug\PRACTICA_MANEJOARCHIVOS.exe
+C:\Users\gonza\Desktop\dae\PRACTICA_MANEJOARCHIVOS\bin\Debug\PRACTICA_MANEJOARCHIVOS.pdb
+C:\Users\gonza\Desktop\dae\PRACTICA_MANEJOARCHIVOS\bin\Debug\BibliotecaClases.dll
+C:\Users\gonza\Desktop\dae\PRACTICA_MANEJOARCHIVOS\bin\Debug\BibliotecaClases.pdb
+C:\Users\gonza\Desktop\dae\PRACTICA_MANEJOARCHIVOS\obj\Debug\PRACTICA_MANEJOARCHIVOS.csprojResolveAssemblyReference.cache
+C:\Users\gonza\Desktop\dae\PRACTICA_MANEJOARCHIVOS\obj\Debug\MainWindow.baml
+C:\Users\gonza\Desktop\dae\PRACTICA_MANEJOARCHIVOS\obj\Debug\MainWindow.g.cs
+C:\Users\gonza\Desktop\dae\PRACTICA_MANEJOARCHIVOS\obj\Debug\App.g.cs
+C:\Users\gonza\Desktop\dae\PRACTICA_MANEJOARCHIVOS\obj\Debug\PRACTICA_MANEJOARCHIVOS_MarkupCompile.cache
+C:\Users\gonza\Desktop\dae\PRACTICA_MANEJOARCHIVOS\obj\Debug\PRACTICA_MANEJOARCHIVOS.g.resources
+C:\Users\gonza\Desktop\dae\PRACTICA_MANEJOARCHIVOS\obj\Debug\PRACTICA_MANEJOARCHIVOS.Properties.Resources.resources
+C:\Users\gonza\Desktop\dae\PRACTICA_MANEJOARCHIVOS\obj\Debug\PRACTICA_MANEJOARCHIVOS.csproj.GenerateResource.Cache
