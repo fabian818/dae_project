@@ -15,6 +15,6 @@ namespace BibliotecaClases.IO
         void DesComprimirGZIP(string Origen, string Destino);
         bool Escribir(string pRuta, string Contenido);
 
-
+        string SerializaXml<T>(T entidad) where T : class;
     }
 }

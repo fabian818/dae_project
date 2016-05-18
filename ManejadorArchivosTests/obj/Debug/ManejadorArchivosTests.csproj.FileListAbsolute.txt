@@ -13,3 +13,6 @@ C:\Users\gonza\Desktop\dae\ManejadorArchivosTests\bin\Debug\BibliotecaClases.pdb
 C:\Users\gonza\Desktop\dae\ManejadorArchivosTests\obj\Debug\ManejadorArchivosTests.csprojResolveAssemblyReference.cache
 C:\Users\gonza\Desktop\dae\ManejadorArchivosTests\obj\Debug\ManejadorArchivosTests.dll
 C:\Users\gonza\Desktop\dae\ManejadorArchivosTests\obj\Debug\ManejadorArchivosTests.pdb
+C:\Users\OECHSLE\Documents\GitHub\dae\ManejadorArchivosTests\obj\Debug\ManejadorArchivosTests.csprojResolveAssemblyReference.cache
+C:\Users\OECHSLE\Documents\GitHub\dae\ManejadorArchivosTests\obj\Debug\ManejadorArchivosTests.dll
+C:\Users\OECHSLE\Documents\GitHub\dae\ManejadorArchivosTests\obj\Debug\ManejadorArchivosTests.pdb

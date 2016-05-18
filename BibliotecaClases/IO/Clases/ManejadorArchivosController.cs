@@ -7,6 +7,9 @@ using System.IO;
 using System.IO.Compression;
 using System.IO.IsolatedStorage;
 using System.Security.Permissions;
+using System.Xml.Serialization;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace BibliotecaClases.IO
 {
@@ -134,6 +137,16 @@ namespace BibliotecaClases.IO
 
                 return true;
             }
+        }
+
+        
+        
+        public string SerializaXml<T>(T entidad) where T : class
+        {
+            var ser = new XmlSerializer(typeof(T));
+            var ms = new MemoryStream();
+            ser.Serialize(ms, entidad);
+            return System.Text.Encoding.UTF8.GetString(ms.ToArray());
         }
 
 
