@@ -4,13 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using PRACTICA_MANEJOARCHIVOS.Classes;
 using System.Windows.Controls;
 using BibliotecaClases.IO;
 using System.IO;
 using System.Security.Cryptography;
 using System.IO.MemoryMappedFiles;
 using System.IO.IsolatedStorage;
-
+using System.Xml.Serialization;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace PRACTICA_MANEJOARCHIVOS
 {
@@ -348,6 +351,89 @@ namespace PRACTICA_MANEJOARCHIVOS
                 }
 
 
+            }
+        }
+
+        private void btnExaminarSerializarXML_Click(object sender, RoutedEventArgs e)
+        {
+            
+            var dialog = new System.Windows.Forms.FolderBrowserDialog();
+            System.Windows.Forms.DialogResult result = dialog.ShowDialog();
+
+            if (result.ToString() == "OK")
+            {
+                txtFileSerializarXML.Text = dialog.SelectedPath;
+            }            
+            
+        }
+
+        private void btnSerializarXML_Click(object sender, RoutedEventArgs e)
+        {
+            using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Connection"].ConnectionString))
+            using (var cmd = new SqlCommand("dbo.usp_GetPersona", conn))
+            {
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                conn.Open();
+                
+                cmd.Parameters.AddWithValue("@IdPersona", Convert.ToInt32(txtIDPersona.Text));
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+
+                try
+                {
+                    if (dr.HasRows)
+                    {
+                        List<Documento> DocList = new List<Documento>();
+                        Documento doc;
+
+
+
+                        while (dr.Read())
+                        {
+                            doc = new Documento();
+                            doc.IdDocumento = dr.GetInt32(dr.GetOrdinal("IdDocumento"));
+                            doc.NroDocumento = dr.GetString(dr.GetOrdinal("NroDocumento"));
+
+                            DocList.Add(doc);
+
+                            var entidad = new Persona()
+                            {
+                                Nombre = dr.GetString(dr.GetOrdinal("Nombre")),
+                                Apellidos = dr.GetString(dr.GetOrdinal("Apellidos")),
+                                Direccion = dr.GetString(dr.GetOrdinal("Direccion")),
+                                Edad = dr.GetString(dr.GetOrdinal("Edad")),
+                                FechaNacimiento = dr.GetDateTime(dr.GetOrdinal("FechaNacimiento")),
+                                Documentos = DocList
+
+                            };
+
+                            IStreams A = new ManejadorArchivosController();
+                            var c = A.SerializaXml(entidad);
+                            string ruta = txtFileSerializarXML.Text + @"\" + txtFileSerializarXMLNew.Text + ".txt";
+
+                            A.Escribir(@ruta, c);
+                        }
+
+
+                        dr.NextResult();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontró registros con el IdPersona ingresado.", "Mensaje", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+
+                    MessageBox.Show("Archivo serializado en XML correctamente.", "Mensaje", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    dr.Close();
+                    dr.Dispose();
+                }
             }
         }
     }
