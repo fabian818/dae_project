@@ -265,8 +265,8 @@
                     <GroupBox Foreground="White" FontFamily="Segoe UI" Header="Deserializar" Margin="15,30,290,402" FontWeight="Bold" FontStyle="Italic">
                         <Grid >
                             <Button FontFamily="Segoe UI" BorderBrush="gray" BorderThickness="1" Background="#FFB8B9BD" Width="75" Height="30.46" x:Name="btnSerializarJson1" Content="Serializar" Margin="192.06,98.94,44.273,18.307" Click="btnDesSerializarJson_Click" />
-                            <TextBox  FontFamily="Segoe UI" Foreground="black" BorderBrush="gray" BorderThickness="1" Background="#FFB8B9BD" HorizontalAlignment="Left" Height="28" Margin="28,19,0,0" TextWrapping="NoWrap"  Text="Ruta" VerticalAlignment="Top" x:Name="txtFileSerializarJson1" Width="273" FontStyle="Italic"/>
-                            <TextBox  FontFamily="Segoe UI" Foreground="black" BorderBrush="gray" BorderThickness="1" Background="#FFB8B9BD" HorizontalAlignment="Left" Height="28" Margin="28,61,0,0" TextWrapping="NoWrap"  Text="Nombre del archivo a crear" VerticalAlignment="Top" x:Name="txtFileSerializarJsonNew1" Width="273" FontStyle="Italic"/>
+                            <TextBox  FontFamily="Segoe UI" Foreground="black" BorderBrush="gray" BorderThickness="1" Background="#FFB8B9BD" HorizontalAlignment="Left" Height="28" Margin="28,19,0,0" TextWrapping="NoWrap"  Text="Ruta" VerticalAlignment="Top" x:Name="txtDesFileSerializarJson" Width="273" FontStyle="Italic"/>
+                            <TextBox  FontFamily="Segoe UI" Foreground="black" BorderBrush="gray" BorderThickness="1" Background="#FFB8B9BD" HorizontalAlignment="Left" Height="28" Margin="28,61,0,0" TextWrapping="NoWrap"  Text="Nombre del archivo a crear" VerticalAlignment="Top" x:Name="txtDesFileSerializarJsonNew" Width="273" FontStyle="Italic"/>
                             <Button FontFamily="Segoe UI" BorderBrush="gray" BorderThickness="1" Background="#FFB8B9BD" Width="75" Height="30.46" x:Name="btnExaminarDesSerializarJson" Content="Examinar" Click="btnExaminarDesSerializarJson_Click"  Margin="56.059,98.94,180.274,18.307"/>
 
                         </Grid>
