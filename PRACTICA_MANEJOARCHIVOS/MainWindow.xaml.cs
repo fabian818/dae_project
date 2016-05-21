@@ -623,5 +623,36 @@ namespace PRACTICA_MANEJOARCHIVOS
         {
             txtFileDesSerializarXML.Text = FolderBrower();
         }
+
+        private void btnDesSerializarJson_Click(object sender, RoutedEventArgs e)
+        {
+            txtDesFileSerializarJson.Text = FolderBrower();
+        }
+
+        private void btnExaminarDesSerializarJson_Click(object sender, RoutedEventArgs e)
+        {
+            IStreams A = new ManejadorArchivosController();
+            string ruta = txtDesFileSerializarJson.Text + @"\" + txtDesFileSerializarJsonNew.Text;
+            Persona p = (Persona)A.DesSerializaJson(new Persona(), ruta);
+
+
+            using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Connection"].ConnectionString))
+            using (var cmd = new SqlCommand("dbo.usp_SetPersona", conn))
+            {
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                conn.Open();
+
+                cmd.Parameters.AddWithValue("@Nombre", p.Nombre);
+                cmd.Parameters.AddWithValue("@Apellidos", p.Apellidos);
+                cmd.Parameters.AddWithValue("@Direccion", p.Direccion);
+                cmd.Parameters.AddWithValue("@Edad", p.Edad);
+                cmd.Parameters.AddWithValue("@FechaNacimiento", p.FechaNacimiento);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                MessageBox.Show("Usuario ingresado correctamente");
+
+            }
+        }
     }
 }

@@ -15,6 +15,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization.Formatters.Soap;
 using System.Runtime.Serialization.Json;
 using System.Xml;
+using System.Web.Script.Serialization;
 
 namespace BibliotecaClases.IO
 {
@@ -170,6 +171,19 @@ namespace BibliotecaClases.IO
             FileStream fs = new FileStream(file, FileMode.Open);
             XmlReader reader = XmlReader.Create(fs);
             return ser.Deserialize(reader);
+        }
+
+        public object DesSerializaJson<T>(T entidad, string file) where T : class
+        {
+            string text = "";
+            using (var streamReader = new StreamReader(file, Encoding.UTF8))
+            {
+                text = streamReader.ReadToEnd();
+
+                T persona = new JavaScriptSerializer().Deserialize<T>(text);
+                return persona;
+            }
+            
         }
 
         public string SerializaSoap<T>(T entidad) where T : class

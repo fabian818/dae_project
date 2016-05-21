@@ -42,8 +42,3 @@ C:\Users\OECHSLE\Documents\GitHub\dae_project\BibliotecaClases\bin\Debug\Bibliot
 C:\Users\OECHSLE\Documents\GitHub\dae_project\BibliotecaClases\obj\Debug\BibliotecaClases.csprojResolveAssemblyReference.cache
 C:\Users\OECHSLE\Documents\GitHub\dae_project\BibliotecaClases\obj\Debug\BibliotecaClases.dll
 C:\Users\OECHSLE\Documents\GitHub\dae_project\BibliotecaClases\obj\Debug\BibliotecaClases.pdb
-C:\projects\dae_project\BibliotecaClases\bin\Debug\BibliotecaClases.dll
-C:\projects\dae_project\BibliotecaClases\bin\Debug\BibliotecaClases.pdb
-C:\projects\dae_project\BibliotecaClases\obj\Debug\BibliotecaClases.csprojResolveAssemblyReference.cache
-C:\projects\dae_project\BibliotecaClases\obj\Debug\BibliotecaClases.dll
-C:\projects\dae_project\BibliotecaClases\obj\Debug\BibliotecaClases.pdb
