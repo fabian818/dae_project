@@ -654,5 +654,67 @@ namespace PRACTICA_MANEJOARCHIVOS
 
             }
         }
+
+        private void btnDesSerializarBinary_Click(object sender, RoutedEventArgs e)
+        {
+            IStreams A = new ManejadorArchivosController();
+            string ruta = txtFileDesSerializarBinary.Text + @"\" + txtFileDesSerializarBinaryNew.Text;
+            Persona p = (Persona)A.DesSerializaBinary(new Persona(), ruta);
+
+
+            using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Connection"].ConnectionString))
+            using (var cmd = new SqlCommand("dbo.usp_SetPersona", conn))
+            {
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                conn.Open();
+
+                cmd.Parameters.AddWithValue("@Nombre", p.Nombre);
+                cmd.Parameters.AddWithValue("@Apellidos", p.Apellidos);
+                cmd.Parameters.AddWithValue("@Direccion", p.Direccion);
+                cmd.Parameters.AddWithValue("@Edad", p.Edad);
+                cmd.Parameters.AddWithValue("@FechaNacimiento", p.FechaNacimiento);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                MessageBox.Show("Usuario ingresado correctamente");
+
+            }   
+        }
+
+        private void btnDesSerializarSOAP_Click(object sender, RoutedEventArgs e)
+        {
+            IStreams A = new ManejadorArchivosController();
+            string ruta = txtFileDesSerializarSOAP.Text + @"\" + txtFileDesSerializarSOAPNew.Text;
+            Persona p = (Persona)A.DesSerializaSoap(new Persona(), ruta);
+
+
+            using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Connection"].ConnectionString))
+            using (var cmd = new SqlCommand("dbo.usp_SetPersona", conn))
+            {
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                conn.Open();
+
+                cmd.Parameters.AddWithValue("@Nombre", p.Nombre);
+                cmd.Parameters.AddWithValue("@Apellidos", p.Apellidos);
+                cmd.Parameters.AddWithValue("@Direccion", p.Direccion);
+                cmd.Parameters.AddWithValue("@Edad", p.Edad);
+                cmd.Parameters.AddWithValue("@FechaNacimiento", p.FechaNacimiento);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                MessageBox.Show("Usuario ingresado correctamente");
+
+            }   
+        }
+
+        private void btnExaminarDesSerializarSOAP_Click(object sender, RoutedEventArgs e)
+        {
+            txtFileDesSerializarSOAP.Text = FolderBrower();
+        }
+
+        private void btnExaminarDesSerializarBinary_Click(object sender, RoutedEventArgs e)
+        {
+            txtFileDesSerializarBinary.Text = FolderBrower();
+        }
     }
 }

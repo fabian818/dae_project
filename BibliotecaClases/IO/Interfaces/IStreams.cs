@@ -18,6 +18,8 @@ namespace BibliotecaClases.IO
         string SerializaXml<T>(T entidad) where T : class;
         object DesSerializaXml<T>(T entidad, string file) where T : class;
         object DesSerializaJson<T>(T entidad, string file) where T : class;
+        object DesSerializaBinary<T>(T entidad, string file) where T : class;
+        object DesSerializaSoap<T>(T entidad, string file) where T : class;
         string SerializaSoap<T>(T entidad) where T : class;
         string SerializaBinary<T>(T entidad) where T : class;
         string SerializaJson<T>(T entidad) where T : class;

@@ -183,7 +183,25 @@ namespace BibliotecaClases.IO
                 T persona = new JavaScriptSerializer().Deserialize<T>(text);
                 return persona;
             }
-            
+
+        }
+
+        public object DesSerializaBinary<T>(T entidad, string file) where T : class
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream fs = File.Open(file, FileMode.Open);
+            object obj = formatter.Deserialize(fs);
+            return (T)obj;
+
+        }
+
+        public object DesSerializaSoap<T>(T entidad, string file) where T : class
+        {
+            SoapFormatter formatter = new SoapFormatter();
+            FileStream fs = File.Open(file, FileMode.Open);
+            object obj = formatter.Deserialize(fs);
+            return (T)obj;
+
         }
 
         public string SerializaSoap<T>(T entidad) where T : class
