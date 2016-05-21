@@ -197,7 +197,7 @@
 				<!-- CREEN SUS CONTROLES AQUI PARA XML-->
                 <Grid Background="#FFB8B9BD">
 
-                     <GroupBox Foreground="White" FontFamily="Segoe UI" Header="Serializar" Margin="15.333,202.333,289.334,230" FontWeight="Bold" FontStyle="Italic">
+                    <GroupBox Foreground="White" FontFamily="Segoe UI" Header="Serializar" Margin="15.333,55.333,289.334,367" FontWeight="Bold" FontStyle="Italic">
                         <Grid >
                             <Button FontFamily="Segoe UI" BorderBrush="gray" BorderThickness="1" Background="#FFB8B9BD" Width="75" Height="30.46" x:Name="btnSerializarXML" Content="Serializar" Margin="192.06,98.94,44.273,18.307" Click="btnSerializarXML_Click" />
                             <TextBox  FontFamily="Segoe UI" Foreground="black" BorderBrush="gray" BorderThickness="1" Background="#FFB8B9BD" HorizontalAlignment="Left" Height="28" Margin="28,19,0,0" TextWrapping="NoWrap"  Text="Ruta" VerticalAlignment="Top" x:Name="txtFileSerializarXML" Width="273" FontStyle="Italic"/>
@@ -207,9 +207,9 @@
                         </Grid>
 
                     </GroupBox>
-                    
-                    <TextBox FontFamily="Segoe UI" Foreground="black" BorderBrush="gray" BorderThickness="1" Background="#FFB8B9BD" HorizontalAlignment="Left" Height="47" TextWrapping="Wrap"  VerticalAlignment="Top" Width="323.333" Margin="15.333,403.73,0,0" x:Name="txtIDPersona" Text="3" RenderTransformOrigin="0.434,0.489" FontWeight="Bold"/>
-                    <Label x:Name="label" Content="IDPersona:" HorizontalAlignment="Left" Margin="30,378,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.026,0.5"/>
+
+                    <TextBox FontFamily="Segoe UI" Foreground="black" BorderBrush="gray" BorderThickness="1" Background="#FFB8B9BD" HorizontalAlignment="Left" Height="80" TextWrapping="Wrap"  VerticalAlignment="Top" Width="323.333" Margin="15.333,356.73,0,0" x:Name="txtIDPersona" Text="3" RenderTransformOrigin="0.434,0.489" FontWeight="Bold"/>
+                    <Label x:Name="label" Content="IDPersona:" HorizontalAlignment="Left" Margin="15.333,297,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.026,0.5"/>
 
 
                 </Grid>
