@@ -214,7 +214,7 @@
                         <Grid >
                             <Button FontFamily="Segoe UI" BorderBrush="gray" BorderThickness="1" Background="#FFB8B9BD" Width="75" Height="30.46" x:Name="btnDesSerializarXML" Content="Deserializar" Margin="192.06,98.94,44.273,18.307" Click="btnDesSerializarXML_Click" />
                             <TextBox  FontFamily="Segoe UI" Foreground="black" BorderBrush="gray" BorderThickness="1" Background="#FFB8B9BD" HorizontalAlignment="Left" Height="28" Margin="28,19,0,0" TextWrapping="NoWrap"  Text="Ruta" VerticalAlignment="Top" x:Name="txtFileDesSerializarXML" Width="273" FontStyle="Italic"/>
-                            <TextBox  FontFamily="Segoe UI" Foreground="black" BorderBrush="gray" BorderThickness="1" Background="#FFB8B9BD" HorizontalAlignment="Left" Height="28" Margin="28,61,0,0" TextWrapping="NoWrap"  Text="Nombre del archivo a deserializar" VerticalAlignment="Top" x:Name="txtFileDesSerializarXMLNew" Width="273" FontStyle="Italic"/>
+                            
                             <Button FontFamily="Segoe UI" BorderBrush="gray" BorderThickness="1" Background="#FFB8B9BD" Width="75" Height="30.46" x:Name="btnExaminarDesSerializarXML" Content="Examinar" Click="btnExaminarDesSerializarXML_Click" Margin="56.059,98.94,180.274,18.307"/>
 
                         </Grid>
