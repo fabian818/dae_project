@@ -237,6 +237,22 @@
 
 				</TabItem.Header>
 				<!-- CREEN SUS CONTROLES AQUI PARA JSON-->
+                <Grid Background="#FFB8B9BD">
+
+                    <GroupBox Foreground="White" FontFamily="Segoe UI" Header="Serializar" Margin="15.333,202.333,289.334,230" FontWeight="Bold" FontStyle="Italic">
+                        <Grid >
+                            <Button FontFamily="Segoe UI" BorderBrush="gray" BorderThickness="1" Background="#FFB8B9BD" Width="75" Height="30.46" x:Name="btnSerializarJson" Content="Serializar" Margin="192.06,98.94,44.273,18.307" Click="btnSerializarJson_Click" />
+                            <TextBox  FontFamily="Segoe UI" Foreground="black" BorderBrush="gray" BorderThickness="1" Background="#FFB8B9BD" HorizontalAlignment="Left" Height="28" Margin="28,19,0,0" TextWrapping="NoWrap"  Text="Ruta" VerticalAlignment="Top" x:Name="txtFileSerializarJson" Width="273" FontStyle="Italic"/>
+                            <TextBox  FontFamily="Segoe UI" Foreground="black" BorderBrush="gray" BorderThickness="1" Background="#FFB8B9BD" HorizontalAlignment="Left" Height="28" Margin="28,61,0,0" TextWrapping="NoWrap"  Text="Nombre del archivo a crear" VerticalAlignment="Top" x:Name="txtFileSerializarJsonNew" Width="273" FontStyle="Italic"/>
+                            <Button FontFamily="Segoe UI" BorderBrush="gray" BorderThickness="1" Background="#FFB8B9BD" Width="75" Height="30.46" x:Name="btnExaminarSerializarJson" Content="Examinar" Click="btnExaminarSerializarJson_Click"  Margin="56.059,98.94,180.274,18.307"/>
+
+                        </Grid>
+
+                    </GroupBox>
+
+                    <TextBox FontFamily="Segoe UI" Foreground="black" BorderBrush="gray" BorderThickness="1" Background="#FFB8B9BD" HorizontalAlignment="Left" Height="47" TextWrapping="Wrap"  VerticalAlignment="Top" Width="323.333" Margin="15.333,403.73,0,0" x:Name="txtIDPersonaJson" Text="3" RenderTransformOrigin="0.434,0.489" FontWeight="Bold"/>
+                    <Label x:Name="label4" Content="IDPersona:" HorizontalAlignment="Left" Margin="30,378,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.026,0.5"/>
+                </Grid>
 
 
 			</TabItem>
@@ -261,9 +277,32 @@
 
 				</TabItem.Header>
 				<!-- CREEN SUS CONTROLES AQUI PARA SOAP-->
+                <Grid Background="#FFB8B9BD">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="157*"/>
+                        <RowDefinition Height="44*"/>
+                    </Grid.RowDefinitions>
+
+                    <GroupBox Foreground="White" FontFamily="Segoe UI" Header="Serializar" Margin="15,202,289,98" FontWeight="Bold" FontStyle="Italic">
+                        <Grid >
+                            <Button FontFamily="Segoe UI" BorderBrush="gray" BorderThickness="1" Background="#FFB8B9BD" Width="75" Height="30.46" x:Name="btnSerializarSOAP" Content="Serializar" Margin="192.06,98.94,44.273,18.307" Click="btnSerializarSOAP_Click" />
+                            <TextBox  FontFamily="Segoe UI" Foreground="black" BorderBrush="gray" BorderThickness="1" Background="#FFB8B9BD" HorizontalAlignment="Left" Height="28" Margin="28,19,0,0" TextWrapping="NoWrap"  Text="Ruta" VerticalAlignment="Top" x:Name="txtFileSerializarSOAP" Width="273" FontStyle="Italic"/>
+                            <TextBox  FontFamily="Segoe UI" Foreground="black" BorderBrush="gray" BorderThickness="1" Background="#FFB8B9BD" HorizontalAlignment="Left" Height="28" Margin="28,61,0,0" TextWrapping="NoWrap"  Text="Nombre del archivo a crear" VerticalAlignment="Top" x:Name="txtFileSerializarSOAPNew" Width="273" FontStyle="Italic"/>
+                            <Button FontFamily="Segoe UI" BorderBrush="gray" BorderThickness="1" Background="#FFB8B9BD" Width="75" Height="30.46" x:Name="btnExaminarSerializarSOAP" Content="Examinar" Click="btnExaminarSerializarSOAP_Click"  Margin="56.059,98.94,180.274,18.307"/>
+
+                        </Grid>
+
+                    </GroupBox>
+
+                    <TextBox FontFamily="Segoe UI" Foreground="black" BorderBrush="gray" BorderThickness="1" Background="#FFB8B9BD" HorizontalAlignment="Left" Height="47" TextWrapping="Wrap"  VerticalAlignment="Top" Width="324" Margin="15,404,0,0" x:Name="txtIDPersonaSOAP" Text="3" RenderTransformOrigin="0.434,0.489" FontWeight="Bold"/>
+                    <Label x:Name="label2" Content="IDPersona:" HorizontalAlignment="Left" Margin="30,378,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.026,0.5"/>
 
 
-			</TabItem>
+                </Grid>
+
+
+
+            </TabItem>
 			<!--Tab item Binario-->
 			<TabItem Background="#FF989AA2">
 				<TabItem.Header>
@@ -286,6 +325,24 @@
 				</TabItem.Header>
 
 			<!-- CREEN SUS CONTROLES AQUI PARA BINARIO-->
+                <Grid Background="#FFB8B9BD">
+
+                    <GroupBox Foreground="White" FontFamily="Segoe UI" Header="Serializar" Margin="15.333,202.333,289.334,230" FontWeight="Bold" FontStyle="Italic">
+                        <Grid >
+                            <Button FontFamily="Segoe UI" BorderBrush="gray" BorderThickness="1" Background="#FFB8B9BD" Width="75" Height="30.46" x:Name="btnSerializarBinary" Content="Serializar" Margin="192.06,98.94,44.273,18.307" Click="btnSerializarBinary_Click" />
+                            <TextBox  FontFamily="Segoe UI" Foreground="black" BorderBrush="gray" BorderThickness="1" Background="#FFB8B9BD" HorizontalAlignment="Left" Height="28" Margin="28,19,0,0" TextWrapping="NoWrap"  Text="Ruta" VerticalAlignment="Top" x:Name="txtFileSerializarBinary" Width="273" FontStyle="Italic"/>
+                            <TextBox  FontFamily="Segoe UI" Foreground="black" BorderBrush="gray" BorderThickness="1" Background="#FFB8B9BD" HorizontalAlignment="Left" Height="28" Margin="28,61,0,0" TextWrapping="NoWrap"  Text="Nombre del archivo a crear" VerticalAlignment="Top" x:Name="txtFileSerializarBinaryNew" Width="273" FontStyle="Italic"/>
+                            <Button FontFamily="Segoe UI" BorderBrush="gray" BorderThickness="1" Background="#FFB8B9BD" Width="75" Height="30.46" x:Name="btnExaminarSerializarBinary" Content="Examinar" Click="btnExaminarSerializarBinary_Click"  Margin="56.059,98.94,180.274,18.307"/>
+
+                        </Grid>
+
+                    </GroupBox>
+
+                    <TextBox FontFamily="Segoe UI" Foreground="black" BorderBrush="gray" BorderThickness="1" Background="#FFB8B9BD" HorizontalAlignment="Left" Height="47" TextWrapping="Wrap"  VerticalAlignment="Top" Width="323.333" Margin="15.333,403.73,0,0" x:Name="txtIDPersonaBinary" Text="3" RenderTransformOrigin="0.434,0.489" FontWeight="Bold"/>
+                    <Label x:Name="label3" Content="IDPersona:" HorizontalAlignment="Left" Margin="30,378,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.026,0.5"/>
+
+
+                </Grid>
 
 
 			</TabItem>

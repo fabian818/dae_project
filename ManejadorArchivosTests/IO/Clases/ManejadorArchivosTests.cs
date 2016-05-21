@@ -62,7 +62,7 @@ namespace ManejadorArchivos.Tests
             var fileWriter = new ManejadorArchivosController();
 
             // Act
-            fileWriter.Leer(path);
+            fileWriter.Leer<StreamReader>(path);
             
         }
 
@@ -79,7 +79,7 @@ namespace ManejadorArchivos.Tests
             var fileWriter = new ManejadorArchivosController();
 
             // Act
-            fileWriter.Leer(fakePath);
+            fileWriter.Leer<StreamReader>(fakePath);
 
         }
 
