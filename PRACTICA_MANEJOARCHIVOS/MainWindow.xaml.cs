@@ -592,5 +592,15 @@ namespace PRACTICA_MANEJOARCHIVOS
         {
             txtFileSerializarJson.Text = FolderBrower();
         }
+
+        private void btnDesSerializarXML_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnExaminarDesSerializarXML_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
