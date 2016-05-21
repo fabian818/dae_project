@@ -10,11 +10,15 @@ namespace BibliotecaClases.IO
 {
     public interface IStreams
     {
-        string Leer(string ruta);
+        string Leer<T>(String ruta) where T : TextReader;
         void ComprimirGZIP(string Origen, string Destino);
         void DesComprimirGZIP(string Origen, string Destino);
         bool Escribir(string pRuta, string Contenido);
 
         string SerializaXml<T>(T entidad) where T : class;
+        string SerializaSoap<T>(T entidad) where T : class;
+        string SerializaBinary<T>(T entidad) where T : class;
+        string SerializaJson<T>(T entidad) where T : class;
+
     }
 }

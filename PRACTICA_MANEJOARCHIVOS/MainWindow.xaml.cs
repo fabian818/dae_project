@@ -35,6 +35,42 @@ namespace PRACTICA_MANEJOARCHIVOS
 
         }
 
+        private string FileBrowser()
+        {
+            //OPENFILE
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+
+            // Asignando extensión de archivo predeterminada 
+            dlg.DefaultExt = ".txt";
+
+            // Se muestra el OpenFileDialog llamando el método ShowDialog 
+            Nullable<bool> result = dlg.ShowDialog();
+
+            if (result == true)
+            {
+                return dlg.FileName;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        private string FolderBrower()
+        {
+            var dialog = new System.Windows.Forms.FolderBrowserDialog();
+            System.Windows.Forms.DialogResult result = dialog.ShowDialog();
+
+            if (result.ToString() == "OK")
+            {
+                return dialog.SelectedPath;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         private void btnLectura_Click(object sender, RoutedEventArgs e)
         {
             
@@ -49,8 +85,8 @@ namespace PRACTICA_MANEJOARCHIVOS
             try
             {
                 //Muestra el contenido del archivo leído
-                MessageBox.Show(A.Leer(sRuta), "Contenido", MessageBoxButton.OK);
-                txtc.Text = A.Leer(sRuta);
+                MessageBox.Show(A.Leer<StreamReader>(sRuta), "Contenido", MessageBoxButton.OK);
+                txtc.Text = A.Leer<StreamReader>(sRuta);
             }
             catch (Exception ex)
             {
@@ -198,108 +234,35 @@ namespace PRACTICA_MANEJOARCHIVOS
         
         private void btnExaminar_Click(object sender, RoutedEventArgs e)
         {
-            //OPENFILE
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-            
-            // Asignando extensión de archivo predeterminada 
-            dlg.DefaultExt = ".txt";
+            txtFileLeer.Text = FileBrowser();
 
-            // Se muestra el OpenFileDialog llamando el método ShowDialog 
-            Nullable<bool> result = dlg.ShowDialog();
- 
-            if (result == true)
-            {
-                // Se muestra la ruta seleccionada
-                txtFileLeer.Text = dlg.FileName;
-            }
-            
         }
 
         private void btnExaminarComprimir_Click(object sender, RoutedEventArgs e)
         {
-            //OPENFILE
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-
-            // Asignando extensión de archivo predeterminada 
-            dlg.DefaultExt = ".txt";
-
-            // Se muestra el OpenFileDialog llamando el método ShowDialog 
-            Nullable<bool> result = dlg.ShowDialog();
-
-            if (result == true)
-            {
-                // Se muestra la ruta seleccionada
-                txtFileComprimir.Text = dlg.FileName;
-            }
+            txtFileComprimir.Text = FileBrowser();
+            
         }
 
         private void btnExaminarDesComprimir_Click(object sender, RoutedEventArgs e)
         {
-            //OPENFILE
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-
-            // Asignando extensión de archivo predeterminada 
-            dlg.DefaultExt = ".txt";
-
-            // Se muestra el OpenFileDialog llamando el método ShowDialog 
-            Nullable<bool> result = dlg.ShowDialog();
-
-            if (result == true)
-            {
-                // Se muestra la ruta seleccionada
-                txtFileDesComprimir.Text = dlg.FileName;
-            }
+                txtFileDesComprimir.Text = FileBrowser();
         }
 
         private void btnExaminarEscribir_Click(object sender, RoutedEventArgs e)
         {
-            //OPENFILE
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+                txtFileEscribir.Text = FileBrowser();
 
-            // Asignando extensión de archivo predeterminada 
-            dlg.DefaultExt = ".txt";
-
-            // Se muestra el OpenFileDialog llamando el método ShowDialog 
-            Nullable<bool> result = dlg.ShowDialog();
-
-            if (result == true)
-            {
-                txtFileEscribir.Text = dlg.FileName;
-            }
         }
 
         private void btnExaminarEncriptar_Click(object sender, RoutedEventArgs e)
         {
-            //OPENFILE
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-
-            // Asignando extensión de archivo predeterminada 
-            dlg.DefaultExt = ".txt";
-
-            // Se muestra el OpenFileDialog llamando el método ShowDialog 
-            Nullable<bool> result = dlg.ShowDialog();
-
-            if (result == true)
-            {
-                txtFileEncriptar.Text = dlg.FileName;
-            }
+                txtFileEncriptar.Text = FileBrowser();
         }
 
         private void btnExaminarDesEncriptar_Click(object sender, RoutedEventArgs e)
         {
-            //OPENFILE
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-
-            // Asignando extensión de archivo predeterminada 
-            dlg.DefaultExt = ".txt";
-
-            // Se muestra el OpenFileDialog llamando el método ShowDialog 
-            Nullable<bool> result = dlg.ShowDialog();
-
-            if (result == true)
-            {
-                txtFileDesEncriptar.Text = dlg.FileName;
-            }
+                txtFileDesEncriptar.Text = FileBrowser();
         }
 
 
@@ -417,13 +380,14 @@ namespace PRACTICA_MANEJOARCHIVOS
 
 
                         dr.NextResult();
+                        MessageBox.Show("Archivo serializado en XML correctamente.", "Mensaje", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
                     else
                     {
                         MessageBox.Show("No se encontró registros con el IdPersona ingresado.", "Mensaje", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
 
-                    MessageBox.Show("Archivo serializado en XML correctamente.", "Mensaje", MessageBoxButton.OK, MessageBoxImage.Information);
+                    
                 }
                 catch(Exception ex)
                 {
@@ -435,6 +399,198 @@ namespace PRACTICA_MANEJOARCHIVOS
                     dr.Dispose();
                 }
             }
+        }
+
+        private void btnSerializarBinary_Click(object sender, RoutedEventArgs e)
+        {
+            using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Connection"].ConnectionString))
+            using (var cmd = new SqlCommand("dbo.usp_GetPersona", conn))
+            {
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                conn.Open();
+
+                cmd.Parameters.AddWithValue("@IdPersona", Convert.ToInt32(txtIDPersonaBinary.Text));
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+
+                try
+                {
+                    if (dr.HasRows)
+                    {
+                        if (dr.Read())
+                        {
+
+                            var entidad = new Persona()
+                            {
+                                Nombre = dr.GetString(dr.GetOrdinal("Nombre")),
+                                Apellidos = dr.GetString(dr.GetOrdinal("Apellidos")),
+                                Direccion = dr.GetString(dr.GetOrdinal("Direccion")),
+                                Edad = dr.GetString(dr.GetOrdinal("Edad")),
+                                FechaNacimiento = dr.GetDateTime(dr.GetOrdinal("FechaNacimiento"))
+
+                            };
+
+                            IStreams A = new ManejadorArchivosController();
+                            var c = A.SerializaBinary(entidad);
+                            string ruta = txtFileSerializarBinary.Text + @"\" + txtFileSerializarBinaryNew.Text + ".txt";
+
+                            A.Escribir(@ruta, c);
+
+                            MessageBox.Show("Archivo serializado en formato binario correctamente.", "Mensaje", MessageBoxButton.OK, MessageBoxImage.Information);
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontró registros con el IdPersona ingresado.", "Mensaje", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    dr.Close();
+                    dr.Dispose();
+                }
+            }
+        }
+
+        private void btnExaminarSerializarBinary_Click(object sender, RoutedEventArgs e)
+        {
+            txtFileSerializarBinary.Text = FolderBrower();
+        }
+
+        private void btnExaminarSerializarSOAP_Click(object sender, RoutedEventArgs e)
+        {
+            txtFileSerializarSOAP.Text = FolderBrower();
+        }
+
+        private void btnSerializarSOAP_Click(object sender, RoutedEventArgs e)
+        {
+            using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Connection"].ConnectionString))
+            using (var cmd = new SqlCommand("dbo.usp_GetPersona", conn))
+            {
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                conn.Open();
+
+                cmd.Parameters.AddWithValue("@IdPersona", Convert.ToInt32(txtIDPersonaSOAP.Text));
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+
+                try
+                {
+                    if (dr.HasRows)
+                    {
+                        if (dr.Read())
+                        {
+
+                            var entidad = new Persona()
+                            {
+                                Nombre = dr.GetString(dr.GetOrdinal("Nombre")),
+                                Apellidos = dr.GetString(dr.GetOrdinal("Apellidos")),
+                                Direccion = dr.GetString(dr.GetOrdinal("Direccion")),
+                                Edad = dr.GetString(dr.GetOrdinal("Edad")),
+                                FechaNacimiento = dr.GetDateTime(dr.GetOrdinal("FechaNacimiento"))
+
+                            };
+
+                            IStreams A = new ManejadorArchivosController();
+                            var c = A.SerializaSoap(entidad);
+                            string ruta = txtFileSerializarSOAP.Text + @"\" + txtFileSerializarSOAPNew.Text + ".txt";
+
+                            A.Escribir(@ruta, c);
+
+                            MessageBox.Show("Archivo serializado en formato SOAP correctamente.", "Mensaje", MessageBoxButton.OK, MessageBoxImage.Information);
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontró registros con el IdPersona ingresado.", "Mensaje", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    dr.Close();
+                    dr.Dispose();
+                }
+            }
+        }
+
+        private void btnSerializarJson_Click(object sender, RoutedEventArgs e)
+        {
+            using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Connection"].ConnectionString))
+            using (var cmd = new SqlCommand("dbo.usp_GetPersona", conn))
+            {
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                conn.Open();
+
+                cmd.Parameters.AddWithValue("@IdPersona", Convert.ToInt32(txtIDPersonaJson.Text));
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+
+                try
+                {
+                    if (dr.HasRows)
+                    {
+                        if (dr.Read())
+                        {
+
+                            var entidad = new Persona()
+                            {
+                                Nombre = dr.GetString(dr.GetOrdinal("Nombre")),
+                                Apellidos = dr.GetString(dr.GetOrdinal("Apellidos")),
+                                Direccion = dr.GetString(dr.GetOrdinal("Direccion")),
+                                Edad = dr.GetString(dr.GetOrdinal("Edad")),
+                                FechaNacimiento = dr.GetDateTime(dr.GetOrdinal("FechaNacimiento"))
+
+                            };
+
+                            IStreams A = new ManejadorArchivosController();
+                            var c = A.SerializaJson(entidad);
+                            string ruta = txtFileSerializarJson.Text + @"\" + txtFileSerializarJsonNew.Text + ".txt";
+
+                            A.Escribir(@ruta, c);
+
+                            MessageBox.Show("Archivo serializado en formato json correctamente.", "Mensaje", MessageBoxButton.OK, MessageBoxImage.Information);
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontró registros con el IdPersona ingresado.", "Mensaje", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    dr.Close();
+                    dr.Dispose();
+                }
+            }
+        }
+
+        private void btnExaminarSerializarJson_Click(object sender, RoutedEventArgs e)
+        {
+            txtFileSerializarJson.Text = FolderBrower();
         }
     }
 }
