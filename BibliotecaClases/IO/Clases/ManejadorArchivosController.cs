@@ -14,6 +14,7 @@ using System.Configuration;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization.Formatters.Soap;
 using System.Runtime.Serialization.Json;
+using System.Xml;
 
 namespace BibliotecaClases.IO
 {
@@ -152,6 +153,23 @@ namespace BibliotecaClases.IO
             var ms = new MemoryStream();
             ser.Serialize(ms, entidad);
             return System.Text.Encoding.UTF8.GetString(ms.ToArray());
+        }
+
+
+        /// <summary>
+        /// Deserializa
+        /// </summary>
+        /// <param name="pRuta">Ruta física del archivo a escribir</param>
+        /// <param name="Contenido">Texto a ser escrito en el archivo</param>
+        /// <returns></returns
+        public object DesSerializaXml<T>(T entidad, string file) where T : class
+        {
+            var ser = new XmlSerializer(typeof(T));
+
+
+            FileStream fs = new FileStream(file, FileMode.Open);
+            XmlReader reader = XmlReader.Create(fs);
+            return ser.Deserialize(reader);
         }
 
         public string SerializaSoap<T>(T entidad) where T : class
