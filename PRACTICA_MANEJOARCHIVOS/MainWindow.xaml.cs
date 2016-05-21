@@ -596,8 +596,8 @@ namespace PRACTICA_MANEJOARCHIVOS
         private void btnDesSerializarXML_Click(object sender, RoutedEventArgs e)
         {
             IStreams A = new ManejadorArchivosController();
-            string ruta = txtFileDesSerializarXML.Text + @"\" + txtFileDesSerializarXMLNew.Text;
-            Persona p = (Persona)A.DesSerializaXml(new Persona(), ruta);
+            string ruta = txtFileDesSerializarXML.Text;
+            Persona p = (Persona)A.DesSerializaXml(new Persona(), @ruta);
 
 
             using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Connection"].ConnectionString))
@@ -621,7 +621,7 @@ namespace PRACTICA_MANEJOARCHIVOS
 
         private void btnExaminarDesSerializarXML_Click(object sender, RoutedEventArgs e)
         {
-            txtFileDesSerializarXML.Text = FolderBrower();
+            txtFileDesSerializarXML.Text = FileBrowser();
         }
     }
 }

@@ -145,8 +145,12 @@ namespace BibliotecaClases.IO
             }
         }
 
-        
-        
+        /// <summary>
+        /// Serializa una clase en XML
+        /// </summary>
+        /// <param name="entidad">Entidad a ser serializada</param>
+        /// <returns></returns>
+
         public string SerializaXml<T>(T entidad) where T : class
         {
             var ser = new XmlSerializer(typeof(T));
@@ -155,9 +159,48 @@ namespace BibliotecaClases.IO
             return System.Text.Encoding.UTF8.GetString(ms.ToArray());
         }
 
+        /// <summary>
+        /// Serializa una clase en formato SOAP
+        /// </summary>
+        /// <param name="entidad">Nombre de la entidad a serializar</param>
+        /// <returns></returns>
+        public string SerializaSoap<T>(T entidad) where T : class
+        {
+            SoapFormatter f = new SoapFormatter();
+            var ms = new MemoryStream();
+            f.Serialize(ms, entidad);
+            return System.Text.Encoding.UTF8.GetString(ms.ToArray());
+        }
 
         /// <summary>
-        /// Deserializa
+        /// Serializa una clase en formato Binario
+        /// </summary>
+        /// <param name="entidad">Nombre de la entidad a serializar</param>
+        /// <returns></returns>
+        public string SerializaBinary<T>(T entidad) where T : class
+        {
+            BinaryFormatter f = new BinaryFormatter();
+            var ms = new MemoryStream();
+            f.Serialize(ms, entidad);
+            return System.Text.Encoding.UTF8.GetString(ms.ToArray());
+
+        }
+
+        /// <summary>
+        /// Serializa una clase en formato Json
+        /// </summary>
+        /// <param name="entidad">Nombre de la entidad a serializar</param>
+        /// <returns></returns>
+        public string SerializaJson<T>(T entidad) where T : class
+        {
+            var f = new DataContractJsonSerializer(typeof(T));
+            var ms = new MemoryStream();
+            f.WriteObject(ms, entidad);
+            return System.Text.Encoding.UTF8.GetString(ms.ToArray());
+        }
+
+        /// <summary>
+        /// Deserializa un archivo XML
         /// </summary>
         /// <param name="pRuta">Ruta física del archivo a escribir</param>
         /// <param name="Contenido">Texto a ser escrito en el archivo</param>
@@ -171,32 +214,6 @@ namespace BibliotecaClases.IO
             XmlReader reader = XmlReader.Create(fs);
             return ser.Deserialize(reader);
         }
-
-        public string SerializaSoap<T>(T entidad) where T : class
-        {
-            SoapFormatter f = new SoapFormatter();
-            var ms = new MemoryStream();
-            f.Serialize(ms, entidad);
-            return System.Text.Encoding.UTF8.GetString(ms.ToArray());
-        }
-
-        public string SerializaBinary<T>(T entidad) where T : class
-        {
-            BinaryFormatter f = new BinaryFormatter();
-            var ms = new MemoryStream();
-            f.Serialize(ms, entidad);
-            return System.Text.Encoding.UTF8.GetString(ms.ToArray());
-
-        }
-
-        public string SerializaJson<T>(T entidad) where T : class
-        {
-            var f = new DataContractJsonSerializer(typeof(T));
-            var ms = new MemoryStream();
-            f.WriteObject(ms, entidad);
-            return System.Text.Encoding.UTF8.GetString(ms.ToArray());
-        }
-
 
     }
 }
